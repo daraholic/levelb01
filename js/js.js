@@ -18,8 +18,8 @@ function lo(x)
 	location.replace(x)
 }
 function op(x,y,url)
-{
-	$(x).fadeIn()
+{//selector # . 標籤...
+	$(x).fadeIn()//淡入
 	if(y)
 	$(y).fadeIn()
 	if(y&&url)
@@ -27,5 +27,5 @@ function op(x,y,url)
 }
 function cl(x)
 {
-	$(x).fadeOut();
+	$(x).fadeOut();//淡出
 }

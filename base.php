@@ -76,7 +76,7 @@ class DB{
     public function save($array){
         if(isset($array['id'])){
             // update
-            foreach($array[0] as $key => $value){
+            foreach($array as $key => $value){
                 $tmp[]="`$key`='$value'";
             }
             $sql="UPDATE $this->table 
@@ -110,10 +110,10 @@ class DB{
 }
 
 function to($url){
-    header("location".$url);
+    header("location:".$url);
 }
 
-// 大寫代表資料表資料
+// 大寫變數代表資料表資料
 $Total=new DB('total');
 $Bottom=new DB('bottom');
 $Title=new DB('title');
@@ -133,4 +133,12 @@ $Menu=new DB('menu');
 
 // print_r($Total->all());
 
+if(!isset($_SESSION['total'])){
+    $total=$Total->find(1);
+    // 資料拿出來(進站人數)+1
+    $total['total']++;
+    // 然後再存回去
+    $Total->save($total);
+    $_SESSION['total']=$total['total'];
+}
 ?>
