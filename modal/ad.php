@@ -1,7 +1,7 @@
-<h3>新增標題圖片</h3>
+<h3>新增動態文字廣告</h3>
 <hr>
 <!-- form>table>tr*2>td*2 -->
-<form action="api/add.php?do=<?=$_GET['table'];?>" method="post" enctype="multipart/form-data">
+<form action="api/title.php" method="post" enctype="multipart/form-data">
     <table>
         <tr>
             <td>標題區圖片:</td>
