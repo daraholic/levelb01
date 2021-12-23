@@ -25,6 +25,7 @@ class DB{
                 $this->title="網站標題管理";
                 $this->button="新增網站標題圖片";
                 $this->header="網站標題";
+                $this->append="替代文字";
             break;
             case "ad";
             $this->title="動態文字廣告管理";
@@ -90,7 +91,7 @@ class DB{
                 foreach($arg[0] as $key => $value){
                     $tmp[]="`$key`='$value'";
                 }
-                $sql .="WHERE ".implode(" AND ".$arg[0])." ".$arg[1];
+                $sql .="WHERE ".implode(" AND ",$tmp)." ".$arg[1];
 
                 break;
             case 1:
@@ -98,9 +99,9 @@ class DB{
                     foreach($arg[0] as $key => $value){
                         $tmp[]="`$key`='$value'";
                     }
-                    $sql .= "WHERE ".implode(" AND ".$arg[0]);
+                    $sql .= "WHERE ".implode(" AND ",$tmp);
                 }else{
-                    $sql .= $arg[1];
+                    $sql .= $arg[0];
                 }
             break;
         }
@@ -114,7 +115,7 @@ class DB{
                 foreach($arg[0] as $key => $value){
                     $tmp[]="`$key`='$value'";
                 }
-                $sql .="WHERE ".implode(" AND ".$arg[0])." ".$arg[1];
+                $sql .="WHERE ".implode(" AND ",$tmp)." ".$arg[1];
 
                 break;
             case 1:
@@ -122,9 +123,9 @@ class DB{
                     foreach($arg[0] as $key => $value){
                         $tmp[]="`$key`='$value'";
                     }
-                    $sql .= "WHERE ".implode(" AND ".$arg[0]);
+                    $sql .= "WHERE ".implode(" AND ".$tmp);
                 }else{
-                    $sql .= $arg[1];
+                    $sql .= $arg[0];
                 }
             break;
         }

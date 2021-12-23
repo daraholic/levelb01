@@ -1,11 +1,11 @@
 <div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
     <p class="t cent botli"><?=$DB->title;?></p>
-    <form method="post" action="api/edit_title.php">
+    <form method="post" action="api/edit.php?do<?=$DB->title;?>">
         <table width="100%">
             <tbody>
                 <tr class="yel">
                     <td width="45%"><?=$DB->header;?></td>
-                    <td width="23%">替代文字</td>
+                    <td width="23%"><?=$DB->apptend;?></td>
                     <td width="7%">顯示</td>
                     <td width="7%">刪除</td>
                     <td></td>
